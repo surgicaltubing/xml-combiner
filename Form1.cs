@@ -124,29 +124,10 @@ namespace OrderCombiner {
 
             SelectFilesInternal(firstFileContent, secondFileContent);
         }
-        //void SelectFilesInternal(string firstFileContent, string secondFileContent) {
-        //    if (firstFileContent.Length > 10 && secondFileContent.Length > 10) {
-        //        firstFileContent = ChopAfter(firstFileContent);
-        //        secondFileContent = ChopBefore(secondFileContent);
-        //        outputFile = (firstFileContent + secondFileContent);
-        //        outputFile = ParseString(outputFile);
-        //        if (count <= 612) {
-        //            outputFile = EditCount(outputFile);
-        //            outputFile = EditBracket(outputFile);
-        //        }
-        //        else {
-        //            MessageBox.Show("Total cards cannot exceed 612, you have " + count + " cards between your two files.");
-        //            ResetVariables();
-        //        }
-        //    }
-        //}
         string openFile() {
             string returnString = "";
             using (OpenFileDialog openFileDialog = new OpenFileDialog()) {
-                // openFileDialog.InitialDirectory = "c:\\Users\\cnorm\\Documents\\MTGProxies";
-                openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
                 openFileDialog.Filter = "xml files (*.xml)|*.xml";
-                openFileDialog.RestoreDirectory = true;
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK) {
                     var fileStream = openFileDialog.OpenFile();
